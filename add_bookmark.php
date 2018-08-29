@@ -67,7 +67,9 @@
 
 	}
 	else{
-		header("Location: index.php");
+		$_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
+ 		 header("Location: login.php");
+  		exit();
 	}?>	
 
         

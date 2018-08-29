@@ -20,7 +20,7 @@
 	define('BASE_URL', 'http://localhost/Bookmarking_System/');
 
 	//Location of the mysql connection script
-	define('MySQL','C:\xampp\db_connect.php');
+	define('MySQL','C:\wamp64\db_connect.php');
 
 	//Adjust time zone
 	date_default_timezone_set('US/Eastern');

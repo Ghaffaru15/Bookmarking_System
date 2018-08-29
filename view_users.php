@@ -8,7 +8,7 @@
 	include('Includes/header.html');
 		if (isset($_SESSION['admin'])){
 	require(MySQL);
-	$q = "SELECT user_id,first_name,last_name,email,registeration_date,last_login FROM users";
+	$q = "SELECT user_id,first_name,last_name,email,registeration_date FROM users";
 	
 	$r = mysqli_query($dbc,$q);
 	
@@ -21,7 +21,7 @@
 		<td align="left"> Last Name </td>
 		<td align="left"> Email </td>
 		<td align="left"> Registeration Date </td>
-		<td align="left"> Last Login </td>
+		
 	</tr>';
 	
 	$bg = '#eeeeee';
@@ -36,7 +36,7 @@
 				<td align="left">' . $row['last_name'] . '</td>
 				<td align="left">' . $row['email'] . '</td>
 				<td align="left">' . $row['registeration_date'] . '</td>
-				<td align="left">' . $row['last_login'] . '</td>
+				
 			  </tr>';
 	}
 	

@@ -24,11 +24,14 @@
 	
 	if (isset($_POST['id'])){
 		$id = $_POST['id'];
-	$query = "UPDATE users SET active=NULL WHERE user_id=$id";
+		$query = "UPDATE users SET active=NULL WHERE user_id=$id";
 		$result = mysqli_query($dbc,$query);
 		
 		if (mysqli_affected_rows($dbc) == 1){
 			echo '<p> User account has been activated</p>';
+		}
+		else{
+			echo '<p>Could not activate</p>';
 		}
 	}
 ?>

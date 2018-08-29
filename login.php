@@ -23,15 +23,20 @@
 			//$_SESSION['user_level'] = $row['user_level'];
 			$_SESSION['time_login'] = date('F j, Y  H:i');
 			$time_login = $_SESSION['time_login'];
+			if (isset($_SESSION['redirect_to'])){
+
+				$redirect = $_SESSION['redirect_to'];
+				unset($_SESSION['redirect_to']);
+				header("Location: add_bookmark.php");
+			  exit();
+		  }
+			else{
+			  $url = BASE_URL  . 'index.php';
+
+			  header("Location: $url");
+		}
 			//$q = "UPDATE users SET last_login=" . $time_login . "WHERE user_id=" . $row['user_id']  ."AND last_login IS NULL";
 			
-			$r = mysqli_query($dbc,$q);
-			
-			if (mysqli_affected_rows($dbc) == 1){
-					$url = BASE_URL  . 'index.php';
-			
-			header("Location: $url");
-			}
 		
 		}
 		else{
@@ -39,6 +44,7 @@
 		}
 		mysqli_close($dbc);
 	}
+
 ?>
 
         <form class="form-login" method="post" action="#">

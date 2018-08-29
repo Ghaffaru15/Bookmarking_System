@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title><?php echo $page_title; ?></title>
-	<link rel="stylesheet" href="Includes/header-user-dropdown.css">
+	<link rel="stylesheet" href="Includes/header-basic-light.css">
 	<link rel="stylesheet" href="Includes/footer-distributed-with-address-and-phones.css">
 	<link rel="stylesheet" href="Includes/form-register.css">
 	<link rel="stylesheet" href="Includes/form-login.css">
@@ -18,10 +18,10 @@
 
 <body>
 	<div id="container">
-	<header class="header-user-dropdown">
+	<header class="header-basic-light">
 		
 	<div class="header-limiter">
-		<h1><a href="index.php">Online Bookmarking<span>System</span></a></h1>
+		<h1><a href="index.php">Links <span>Bookmarking</span></a></h1>
 
 		<nav>
 			<!--<a href="register.php">Register</a> -->
@@ -37,7 +37,7 @@
 			?>
 			<?php
 				if (isset($_SESSION['user_id']))
-					echo '<a href="recommend_bookmark.php">Recommendations<span class="header-new-feature">new</span></a>';
+					echo '<a href="recommend_bookmark.php">Recommendations</a>';
 			?>
 		<!--	<a href="#">Activate Account</a> -->
 			<?php
@@ -51,8 +51,11 @@
 			<!--<a href="login.php">Login</a>
 -->			<!--<a href="reset_password.php"> Reset Password<span class="header-new-feature">new</span></a> -->
 			<?php
-				if (!isset($_SESSION['user_id']) && !isset($_SESSION['admin']))
-					echo '<a href="reset_password.php"> Reset Password </a>';
+				if (!isset($_SESSION['user_id']) && !isset($_SESSION['admin'])){
+					echo '<a href="add_bookmark.php">Add Bookmarks</a>';
+				}
+				else
+				
 			?>	
 			<?php
 				if (isset($_SESSION['user_id']))
@@ -62,7 +65,7 @@
 			<!--<a href="#"> Site Admin </a> -->
 			<?php
 				if (!isset($_SESSION['user_id']) && !isset($_SESSION['admin']))
-					echo '<a href="site_admin.php">Site Admin<span class="header-new-feature">new</span> </a>';
+					echo '<a href="site_admin.php">Site Admin </a>';
 			?>
 			
 			<?php
@@ -71,5 +74,8 @@
 				}
 			?>
 		</nav>
-	</header>
 
+
+</div>
+</header>
+</div>
